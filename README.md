@@ -1,0 +1,2 @@
+# Bomberman
+ projekt z programowania
