@@ -55,33 +55,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scrypty\Destroy.cs" />
+     <Compile Include="Assets\Scrypty\Dissable_trigger_on_player_exit.cs" />
+     <Compile Include="Assets\Scrypty\GlobalStateManage.cs" />
      <Compile Include="Assets\Scrypty\Player.cs" />
+     <Compile Include="Assets\Scrypty\bomb.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>D:/bomberman/Bomberman/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>D:/bomberman/Bomberman/Bomberman/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>D:/bomberman/Bomberman/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>D:/bomberman/Bomberman/Bomberman/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/bomberman/Bomberman/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/bomberman/Bomberman/Bomberman/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/bomberman/Bomberman/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/bomberman/Bomberman/Bomberman/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>D:/bomberman/Bomberman/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>D:/bomberman/Bomberman/Bomberman/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>D:/bomberman/Bomberman/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>D:/bomberman/Bomberman/Bomberman/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>D:/bomberman/Bomberman/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>D:/bomberman/Bomberman/Bomberman/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/bomberman/Bomberman/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/bomberman/Bomberman/Bomberman/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>D:/bomberman/Bomberman/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>D:/bomberman/Bomberman/Bomberman/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

@@ -5,10 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Range(1, 2)]
+    public GlobalStateManage globalManager;
     public int PlayerNumber = 1;
     public float moveSpeed = 5f;
     public bool canDropBombs = true;
     public bool canMove = true;
+    public bool dead = false;
     private int bombs = 2; //2 bomby powinny starczyć,po eksplozji odzyskuje bombę
 
     public GameObject bombPrefab;
@@ -39,7 +41,7 @@ public class Player : MonoBehaviour
             return;
         }
 
-        if (playerNumber == 1)
+        if (PlayerNumber == 1)
         {
             UpdatePlayer1Movement();
         }
@@ -81,10 +83,50 @@ public class Player : MonoBehaviour
             DropBomb();
         }
     }
+    private void UpdatePlayer2Movement()
+    {
+        if (Input.GetKey(KeyCode.UpArrow))
+        { //Up movement
+            rigidBody.velocity = new Vector3(rigidBody.velocity.x, rigidBody.velocity.y, moveSpeed);
+            myTransform.rotation = Quaternion.Euler(0, 0, 0);
+            animator.SetBool("Walking", true);
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        { //Left movement
+            rigidBody.velocity = new Vector3(-moveSpeed, rigidBody.velocity.y, rigidBody.velocity.z);
+            myTransform.rotation = Quaternion.Euler(0, 270, 0);
+            animator.SetBool("Walking", true);
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        { //Down movement
+            rigidBody.velocity = new Vector3(rigidBody.velocity.x, rigidBody.velocity.y, -moveSpeed);
+            myTransform.rotation = Quaternion.Euler(0, 180, 0);
+            animator.SetBool("Walking", true);
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        { //Right movement
+            rigidBody.velocity = new Vector3(moveSpeed, rigidBody.velocity.y, rigidBody.velocity.z);
+            myTransform.rotation = Quaternion.Euler(0, 90, 0);
+            animator.SetBool("Walking", true);
+        }
+
+        if (canDropBombs && (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return)))
+        { //Drop Bomb. For Player 2's bombs, allow both the numeric enter as the return key or players 
+            //without a numpad will be unable to drop bombs
+            DropBomb();
+        }
+    }
     private void DropBomb()
     {
         if (bombPrefab)
         {
+            Instantiate(bombPrefab, new Vector3(Mathf.RoundToInt(myTransform.position.x),
+  bombPrefab.transform.position.y, Mathf.RoundToInt(myTransform.position.z)),
+  bombPrefab.transform.rotation);
+
 
         }
     }
@@ -92,7 +134,10 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Explosion"))
         {
-            Debug.Log("P" + playerNumber + " hit by explosion!");
+            Debug.Log("P" + PlayerNumber + " hit by explosion!");
+            dead = true; // 1
+            globalManager.PlayerDied(PlayerNumber); // 2
+            Destroy(gameObject); // 3  
         }
     }
 }
